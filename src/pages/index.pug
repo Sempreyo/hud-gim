@@ -1,0 +1,13 @@
+extends ../templates/layout_default.pug
+
+block variables
+  - isMainPage = false
+  - pageTitle = 'HudGim'
+  - metaDescription = 'description'
+  - metaKeywords = 'keywords'
+
+block content
+  section.hero
+  //svg.library__icon
+    use(href= src.icon + 'icon__default')
+  //img.library__img(src= src.img + 'img__gulp.jpg', alt='Gulp logo')
