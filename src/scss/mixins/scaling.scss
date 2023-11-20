@@ -1,0 +1,7 @@
+@function vwxl($px) {
+  @return calc(($px/1920) * 100)+vw;
+}
+
+@function vwm($px) {
+  @return calc(($px/360) * 100)+vw;
+}

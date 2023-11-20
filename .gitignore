@@ -22,3 +22,4 @@ node_modules/
 *.zip
 ex_files
 Thumbs.db
+package-lock.json

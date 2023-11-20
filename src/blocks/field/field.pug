@@ -40,12 +40,6 @@ mixin field(type, label, placeholder, mods, name, id, value, max)
         +input-password(placeholder, '', id, name, value)(class='field__input')&attributes(attributes)
       if type === 'number'
         +input-number(placeholder, '', id, max, name, value)(class='field__input')&attributes(attributes)
-      if type === 'file'
-        +input-file('', id, name)(class='field__input')&attributes(attributes)
-      if type === 'textarea'
-        +textarea(placeholder, '', name, id, value)(class='field__textarea')&attributes(attributes)
-      if type === 'select'
-        +select(value, '', name, id)(class='field__select')&attributes(attributes)
       if label
         span.field__label!= label
     .field__message Текст ошибки

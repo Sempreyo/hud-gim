@@ -1,9 +1,11 @@
 .link {
   $block-name: &; // #{$block-name}__element
 
+  color: var(--front-primary);
   text-decoration: none;
+  transition: 0.3s ease;
 
   &:hover {
-    text-decoration: underline;
+    color: var(--link-hover);
   }
 }

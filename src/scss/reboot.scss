@@ -1,3 +1,6 @@
+@import "../scss/breakpoints";
+@import "../scss/mixins/scaling";
+
 :root {
   font-size: var(--font-size-root);
 }
@@ -38,4 +41,24 @@ svg {
 
 [hidden] {
   display: none;
+}
+
+.d-none-mobile {
+  display: none;
+
+  @media (min-width: $screen-ti) {
+    display: block;
+  }
+}
+
+.d-none-desktop {
+  display: block;
+
+  @media (min-width: $screen-ti) {
+    display: none;
+  }
+}
+
+.body-scroll-lock {
+  overflow: hidden;
 }

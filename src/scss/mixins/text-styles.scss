@@ -1,3 +1,5 @@
+@import "../../scss/breakpoints";
+@import "../../scss/mixins/scaling";
 @import "fluid";
 
 @mixin body {
@@ -6,10 +8,29 @@
   line-height: 1;
 }
 
+@mixin hero-title {
+  font-weight: 400;
+  font-size: vwm(45);
+  font-family: var(--font-dance);
+  line-height: 0.9;
+  white-space: nowrap;
+
+  @media (min-width: $screen-ti) {
+    font-size: vwxl(150);
+    line-height: 0.65;
+  }
+}
+
 @mixin button-title {
   font-weight: 500;
-  font-size: 14px;
-  line-height: 1.1429;
+  font-size: 15px;
+  line-height: 1;
+  letter-spacing: 0.3px;
+
+  @media (min-width: $screen-ti) {
+    font-size: 20px;
+    letter-spacing: 0.4px;
+  }
 }
 
 @mixin footer {
@@ -18,58 +39,10 @@
   line-height: 1.1429;
 }
 
-@mixin nav-title {
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 1.7143;
-}
-
 @mixin nav-link {
   font-weight: 400;
   font-size: 14px;
   line-height: 1.1429;
-}
-
-@mixin hero-title {
-  font-weight: 700;
-  font-size: 40px;
-  line-height: 1.25;
-  letter-spacing: -0.02em;
-
-  @media screen and (min-width: $screen-t) {
-    font-size: 56px;
-  }
-}
-
-@mixin hero-descr {
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1.5;
-  letter-spacing: -0.02em;
-
-  @media screen and (min-width: $screen-t) {
-    font-size: 24px;
-  }
-}
-
-@mixin library-title {
-  font-weight: 700;
-  font-size: 32px;
-  line-height: 1.25;
-  letter-spacing: -0.02em;
-}
-
-@mixin library-subtitle {
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 1.33;
-  letter-spacing: -0.01em;
-}
-
-@mixin library-descr {
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.75;
 }
 
 @mixin fluid-text {

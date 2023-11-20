@@ -1,0 +1,43 @@
+//- Все примеси в этом файле должны начинаться c имени блока (menu)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт в сборку
+
+mixin menu(mods)
+
+  //- Принимает:
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +menu('some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' menu--' + modsList[i].trim();
+      }
+    }
+
+  .menu(class= allMods)&attributes(attributes)
+    .container.menu__container
+      .menu__top
+        +close()(class='menu__close')
+        svg.logo.menu__logo
+          use(href= src.icon + 'logo-default')
+        a.link.menu__phone(href='tel:+79605552222') +7 960 555 22 22
+        +button('link', 'Заказать звонок', 'primary', '', '', '#')(class='menu__call')
+      ul.menu__nav
+        li
+          a.link(href='#') О клубе
+        li
+          a.link(href='#') Тренер
+        li
+          a.link(href='#') Цены
+        li
+          a.link(href='#') Отзывы
+        li
+          a.link(href='#') Контакты
+      a.link.menu__site(href='#')
+        svg.menu__site-icon
+          use(href= src.icon + 'vk')
+        span hudgim_ru

@@ -1,6 +1,14 @@
+@import "../../scss/breakpoints";
+@import "../../scss/mixins/scaling";
+
 .logo {
   $block-name: &; // #{$block-name}__element
 
-  width: 87px;
-  height: 24px;
+  width: vwm(161);
+  height: vwm(50);
+
+  @media (min-width: $screen-ti) {
+    width: vwxl(161);
+    height: vwxl(50);
+  }
 }

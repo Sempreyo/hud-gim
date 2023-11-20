@@ -1,0 +1,14 @@
+@import "../../scss/breakpoints";
+
+.circle-text {
+  $block-name: &; // #{$block-name}__element
+
+  width: vwm(100);
+  height: vwm(100);
+  animation: rotating 30s linear infinite;
+
+  @media (min-width: $screen-ti) {
+    width: vwxl(156);
+    height: vwxl(156);
+  }
+}
