@@ -6,6 +6,8 @@ ready(function () {
   const header = document.querySelector(".header");
   const burger = document.querySelector(".header__burger");
   const menuClose = document.querySelector(".menu__close");
+  const HEADER_SCROLL_BG = 50;
+  const HEADER_SCROLL_HIDE = 400;
 
   burger.addEventListener("click", openNav);
   menuClose.addEventListener("click", openNav);
@@ -22,13 +24,13 @@ ready(function () {
   document.addEventListener("scroll", () => {
     let currentTop = window.scrollY;
 
-    if (currentTop > 50) {
+    if (currentTop > HEADER_SCROLL_BG) {
       header.classList.add("header--bg");
     } else {
       header.classList.remove("header--bg");
     }
 
-    if (currentTop > 400 && currentTop > previousTop) {
+    if (currentTop > HEADER_SCROLL_HIDE && currentTop > previousTop) {
       header.classList.add("header--hide");
     } else {
       header.classList.remove("header--hide");
