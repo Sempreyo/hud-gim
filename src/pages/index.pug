@@ -8,6 +8,34 @@ block variables
 
 block content
   section.hero
+    .container.container--large.hero__container
+      +circle-text()(class='hero__circle-text d-none-desktop')
+      .hero__content
+        h1.hero__title Художественная
+          span гимнастика
+        .hero__subtitle для детей
+        .advantages.hero__advantages
+          +circle-text()(class='hero__circle-text d-none-mobile')
+          .advantages__wrapper
+            ul.advantages__list
+              li.advantages__list-item
+                svg.advantages__list-item-icon
+                  use(href= src.icon + 'check')
+                span.advantages__list-item-text Принимаем
+                  span  с 3 лет
+              li.advantages__list-item
+                svg.advantages__list-item-icon
+                  use(href= src.icon + 'check')
+                span.advantages__list-item-text Первое занятие
+                  span  бесплатно
+              li.advantages__list-item
+                svg.advantages__list-item-icon
+                  use(href= src.icon + 'check')
+                span.advantages__list-item-text Клуб
+                  span  в Москве
+          +button('link', 'Бесплатное пробное занятие', 'primary, large', '', '', '#')(class='advantages__button', data-hystmodal='#free-lesson')
+      .hero__image-wrapper
+        img.hero__image(src= src.img + 'hero.jpg', srcset= src.img + 'hero@2x.jpg 2x', alt='')
   //svg.library__icon
     use(href= src.icon + 'icon__default')
   //img.library__img(src= src.img + 'img__gulp.jpg', alt='Gulp logo')

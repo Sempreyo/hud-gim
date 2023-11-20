@@ -1,7 +1,0 @@
-@import "../../scss/breakpoints";
-@import "../../scss/mixins/list-reset";
-@import "../../scss/mixins/text-styles";
-
-.nav {
-  $block-name: &; // #{$block-name}__element
-}

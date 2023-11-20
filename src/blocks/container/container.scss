@@ -1,18 +1,28 @@
 @import "../../scss/breakpoints";
+@import "../../scss/mixins/scaling";
 
 .container {
-  max-width: 1136px;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: vwm(1136);
   height: 100%;
   margin: 0 auto;
-  padding: 0 16px;
+  padding: 0 vwm(15);
 
-  @media screen and (min-width: $screen-t) {
-    padding: 0 40px;
+  @media (min-width: $screen-ti) {
+    max-width: vwxl(1136);
+    padding: 0 vwxl(15);
   }
 
   @media screen and (min-width: $screen-dl) {
-    width: 100%;
-    margin: 0;
-    padding: 0 112px;
+    padding: 0 vwxl(40);
+  }
+
+  &--large {
+    max-width: 100%;
+
+    @media (min-width: $screen-ti) {
+      max-width: vwxl(1920);
+    }
   }
 }

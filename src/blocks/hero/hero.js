@@ -1,14 +1,13 @@
 import ready from "../../js/utils/documentReady.js";
+import HystModal from "hystmodal";
 
 ready(function () {
-  const hostHero = document.querySelector(".hero");
+  const heroParent = document.querySelector(".hero");
 
-  if (hostHero) {
-    const heroTrigger = hostHero.querySelectorAll(".hero__js-trigger");
-    heroTrigger.forEach((element) => {
-      element.addEventListener("click", () => {
-        alert("JS works!");
-      });
-    });
-  }
+  heroParent.classList.add("hero--animated");
+
+  /* Popup */
+  new HystModal({
+    linkAttributeName: "data-hystmodal",
+  });
 });

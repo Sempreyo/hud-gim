@@ -1,4 +1,5 @@
 @import "../../scss/mixins/flexbox";
+@import "../../scss/mixins/scaling";
 @import "../../scss/mixins/text-styles";
 
 .button {
@@ -7,26 +8,34 @@
   @include flex-center;
   @include button-title;
 
-  padding: 11px 20px;
-  color: var(--front-invert);
+  display: inline-flex;
+  padding: 15px 30px;
   text-decoration: none;
   background: none;
   border: none;
-  border-radius: 20px;
+  border-radius: 5px;
+  box-shadow:
+    0 2.6px 3.1px 0 rgb(241 1 50 / 2%),
+    0 11.5px 6.5px 0 rgb(241 1 50 / 4%),
+    0 28.4px 13px 0 rgb(241 1 50 / 5%),
+    0 54.7px 25.5px 0 rgb(241 1 50 / 6%),
+    0 92px 46.8px 0 rgb(241 1 50 / 8%),
+    0 142px 80px 0 rgb(241 1 50 / 10%);
   cursor: pointer;
   transition: background 0.25s ease, border 0.25s ease, color 0.25s ease;
   appearance: none;
 
-  &:focus {
-    outline: 3px solid var(--brand-primary-light);
+  @media (min-width: $screen-ti) {
+    padding: 20px 40px;
+    border-radius: 5px;
   }
 
   &--primary {
-    background: var(--brand-primary);
-    border: 1px solid var(--brand-primary);
+    color: var(--front-invert);
+    background-color: var(--button-primary);
 
     &:hover {
-      background: var(--brand-primary-dark);
+      background-color: var(--button-primary-hover);
     }
 
     &[disabled],
@@ -38,17 +47,27 @@
 
   &--secondary {
     color: var(--front-primary);
-    background: var(--back-secondary);
-    border: 1px solid var(--border-button);
+    background-color: var(--button-secondary);
 
     &:hover {
-      border-color: var(--front-primary);
+      background-color: var(--button-secondary-hover);
     }
 
     &[disabled],
     &#{$block-name}--disabled {
       color: var(--front-tertiary);
       border-color: var(--border-button-disabled);
+    }
+  }
+
+  &--large {
+    padding: 15px 30px;
+    font-weight: 600;
+    font-size: 15px;
+
+    @media (min-width: $screen-ti) {
+      padding: 25px 40px;
+      font-size: 25px;
     }
   }
 

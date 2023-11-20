@@ -1,6 +1,143 @@
 @import "../../scss/breakpoints";
-@import "../../scss/mixins/fluid";
+@import "../../scss/mixins/scaling";
+@import "../../scss/mixins/list-reset";
 
 .header {
   $block-name: &; // #{$block-name}__element
+
+  padding: vwm(15) 0;
+  background-color: transparent;
+  transition: 0.5s ease;
+
+  @media (min-width: $screen-ti) {
+    padding: vwxl(35) 0;
+  }
+
+  &--bg {
+    background-color: var(--back-primary);
+
+    #{$block-name}__call {
+      box-shadow: none;
+    }
+  }
+
+  &--hide {
+    transform: translateY(-100%);
+  }
+
+  &__container {
+    display: flex;
+    gap: vwm(20);
+    align-items: center;
+    justify-content: space-between;
+
+    @media (min-width: $screen-ti) {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: vwxl(20);
+      justify-content: unset;
+    }
+  }
+
+  &__nav {
+    @include list-reset;
+
+    display: none;
+    grid-column: 2 / span 2;
+    gap: vwxl(15);
+    align-items: center;
+
+    @media (min-width: $screen-ti) {
+      display: flex;
+    }
+
+    @media screen and (min-width: $screen-d) {
+      gap: vwxl(25);
+    }
+
+    @media screen and (min-width: $screen-dxl) {
+      gap: vwxl(50);
+    }
+  }
+
+  &__nav-link {
+    font-size: vwxl(20);
+    letter-spacing: vwxl(0.4);
+  }
+
+  &__phone {
+    display: none;
+    grid-column: 4 / span 2;
+    justify-self: flex-end;
+    font-size: vwxl(32);
+    letter-spacing: vwxl(0.6);
+
+    @media (min-width: $screen-ti) {
+      display: block;
+    }
+  }
+
+  &__burger {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: vwm(30);
+    height: vwm(30);
+    padding: vwm(7) vwm(4);
+
+    @media (min-width: $screen-ti) {
+      display: none;
+    }
+  }
+
+  &__burger-line {
+    position: relative;
+    width: 100%;
+    height: vwm(2);
+    background-color: var(--color-black);
+    border-radius: vwm(10);
+
+    &::before,
+    &::after {
+      position: absolute;
+      left: 0;
+      display: block;
+      height: vwm(2);
+      background-color: var(--color-black);
+      border-radius: vwm(10);
+      content: "";
+    }
+
+    &::before {
+      top: vwm(-6);
+      width: 75%;
+    }
+
+    &::after {
+      bottom: vwm(-6);
+      width: 50%;
+    }
+  }
+
+  &__call {
+    display: none;
+    justify-self: flex-end;
+    padding: vwm(15) vwm(30) !important;
+    font-size: vwm(15) !important;
+    letter-spacing: vwm(0.3) !important;
+    transition: 0.3s ease;
+
+    @media (min-width: $screen-ti) {
+      display: flex;
+      padding: vwxl(20) vwxl(40) !important;
+      font-size: vwxl(20) !important;
+      letter-spacing: vwxl(0.4) !important;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+  }
 }

@@ -1,0 +1,23 @@
+//- Все примеси в этом файле должны начинаться c имени блока (close)
+//- Упоминание имени блока в классах обязательно, без этого он не попадёт в сборку
+
+mixin close(mods)
+
+  //- Принимает:
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +close('some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' close--' + modsList[i].trim();
+      }
+    }
+
+  button.close(class= allMods, data-hystclose='')&attributes(attributes)
+    svg.close__icon
+      use(href= src.icon + 'close')

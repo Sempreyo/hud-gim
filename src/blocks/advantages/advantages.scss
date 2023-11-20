@@ -1,0 +1,79 @@
+@import "../../scss/breakpoints";
+@import "../../scss/mixins/scaling";
+@import "../../scss/mixins/list-reset";
+
+.advantages {
+  $block-name: &; // #{$block-name}__element
+
+  padding: vwm(20) vwm(15) vwm(50) vwm(15);
+  background-color: var(--front-invert);
+
+  @media (min-width: $screen-ti) {
+    max-width: vwxl(755);
+    padding: vwxl(26) vwxl(30) vwxl(95) vwxl(245);
+  }
+
+  &__list {
+    @include list-reset;
+
+    display: flex;
+    flex-direction: column;
+    gap: vwm(10);
+
+    @media (min-width: $screen-ti) {
+      gap: vwxl(15);
+    }
+  }
+
+  &__list-item {
+    display: flex;
+    gap: vwm(10);
+    align-items: center;
+
+    @media (min-width: $screen-ti) {
+      gap: vwxl(10);
+    }
+  }
+
+  &__list-item-icon {
+    width: vwm(20);
+    height: vwm(20);
+
+    @media (min-width: $screen-ti) {
+      width: vwxl(30);
+      height: vwxl(30);
+    }
+  }
+
+  &__list-item-text {
+    font-weight: 300;
+    font-size: vwm(15);
+    letter-spacing: vwm(0.3);
+
+    @media (min-width: $screen-ti) {
+      font-size: vwxl(20);
+      letter-spacing: vwxl(0.4);
+    }
+
+    span {
+      font-weight: 600;
+    }
+  }
+
+  &__button {
+    position: absolute;
+    bottom: vwm(-24);
+    left: vwm(23);
+    padding: vwm(15) vwm(30) !important;
+    font-size: vwm(15) !important;
+    letter-spacing: vwm(0.3) !important;
+
+    @media (min-width: $screen-ti) {
+      bottom: vwxl(-40);
+      left: vwxl(245);
+      padding: vwxl(20) vwxl(40) !important;
+      font-size: vwxl(20) !important;
+      letter-spacing: vwxl(0.4) !important;
+    }
+  }
+}

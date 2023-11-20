@@ -1,0 +1,13 @@
+.hystmodal {
+  &__window {
+    box-sizing: border-box;
+    width: 560px;
+    max-width: 100%;
+    padding: 25px 25px 30px;
+    border-radius: 5px;
+
+    @media (min-width: $screen-ti) {
+      padding: 50px 58px 65px;
+    }
+  }
+}
