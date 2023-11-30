@@ -1,0 +1,283 @@
+@import "../../scss/breakpoints";
+@import "../../scss/mixins/scaling";
+@import "../../scss/mixins/text-styles";
+
+.clients {
+  $block-name: &; // #{$block-name}__element
+
+  position: relative;
+  padding: vwm(30) 0 vwm(55);
+
+  @media (min-width: $screen-t) {
+    padding: vwt(30) 0 vwt(55);
+  }
+
+  @media (min-width: $screen-tl) {
+    padding: vwti(50) 0 vwti(60);
+  }
+
+  @media (min-width: $screen-d) {
+    padding: vwxl(105) 0 vwxl(95);
+  }
+
+  &--animated {
+    &::after {
+      height: vwm(205) !important;
+
+      @media (min-width: $screen-t) {
+        height: vwt(205) !important;
+      }
+
+      @media (min-width: $screen-tl) {
+        height: vwti(1000) !important;
+      }
+
+      @media (min-width: $screen-d) {
+        height: vwxl(1000) !important;
+      }
+    }
+  }
+
+  &::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    width: vwm(180);
+    height: 0;
+    background-color: var(--back-secondary-20);
+    transition: height 0.8s ease-in-out 0.1s;
+    content: "";
+
+    @media (min-width: $screen-t) {
+      width: vwt(180);
+    }
+
+    @media (min-width: $screen-tl) {
+      top: vwti(25);
+      width: vwti(640);
+    }
+
+    @media (min-width: $screen-d) {
+      top: vwxl(25);
+      width: vwxl(640);
+    }
+  }
+
+  &__title {
+    @include small-title;
+
+    margin: 0;
+    font-size: vwm(50);
+    letter-spacing: vwm(0.5);
+
+    @media (min-width: $screen-t) {
+      font-size: vwt(50);
+      letter-spacing: vwt(0.5);
+    }
+
+    @media (min-width: $screen-tl) {
+      font-size: vwti(100);
+      letter-spacing: vwti(1);
+    }
+
+    @media (min-width: $screen-d) {
+      font-size: vwxl(100);
+      letter-spacing: vwxl(1);
+    }
+  }
+
+  &__nav {
+    display: none !important;
+
+    @media (min-width: $screen-tl) {
+      display: flex !important;
+    }
+  }
+
+  &__wrapper {
+    grid-column: 1 / span 4;
+    width: calc(100% + 30px);
+    margin: 0 -15px;
+    padding: vwm(20) 0 vwm(70);
+    overflow: hidden;
+
+    @media (min-width: $screen-t) {
+      padding: vwt(20) 0 vwt(70);
+    }
+
+    @media (min-width: $screen-tl) {
+      grid-column: 2 / span 10;
+      width: 100%;
+      margin: vwti(-42) 0 0;
+      padding: vwti(70);
+    }
+
+    @media (min-width: $screen-d) {
+      margin: vwxl(-42) 0 0;
+      padding: vwxl(70);
+    }
+  }
+
+  &__swiper {
+    width: 100%;
+    max-width: vwm(300);
+    overflow: visible;
+
+    @media (min-width: $screen-t) {
+      max-width: vwt(300);
+    }
+
+    @media (min-width: $screen-tl) {
+      max-width: vwti(400);
+    }
+
+    @media (min-width: $screen-d) {
+      max-width: vwxl(600);
+    }
+  }
+
+  &__slide {
+    width: vwm(300);
+    height: vwm(300);
+    padding: vwm(12.5);
+    background-color: var(--back-primary);
+    box-shadow:
+      0 1.851px 3.148px 0 rgb(0 0 0 / 5%),
+      0 8.148px 6.518px 0 rgb(0 0 0 / 4%),
+      0 20px 13px 0 rgb(241 1 50 / 3%),
+      0 38.518px 25.481px 0 rgb(241 1 50 / 3%),
+      0 64.814px 46.851px 0 rgb(241 1 50 / 2%),
+      0 100px 80px 0 rgb(0 0 0 / 1%);
+    transform: translateX(vwm(700)) scale(0.5) !important;
+    transition: 0.3s ease;
+
+    @media (min-width: $screen-t) {
+      width: vwt(300);
+      height: vwt(300);
+      padding: vwt(12.5);
+      transform: translateX(vwt(700)) scale(0.5) !important;
+    }
+
+    @media (min-width: $screen-tl) {
+      width: vwti(400);
+      height: vwti(400);
+      padding: vwti(25);
+      transform: translateX(vwti(520)) scale(0.5) !important;
+    }
+
+    @media (min-width: $screen-d) {
+      width: vwxl(600);
+      height: vwxl(600);
+      padding: vwxl(25);
+      transform: translateX(vwxl(596)) scale(0.5) !important;
+    }
+
+    &.swiper-slide-prev {
+      z-index: 2;
+      transform: translateX(vwm(217)) scale(0.74) !important;
+
+      @media (min-width: $screen-t) {
+        transform: translateX(vwt(217)) scale(0.74) !important;
+      }
+
+      @media (min-width: $screen-tl) {
+        transform: translateX(vwti(217)) scale(0.74) !important;
+      }
+
+      @media (min-width: $screen-d) {
+        transform: translateX(vwxl(217)) scale(0.74) !important;
+      }
+    }
+
+    &.swiper-slide-next {
+      z-index: 2;
+      transform: translateX(vwm(-217)) scale(0.75) !important;
+
+      @media (min-width: $screen-t) {
+        transform: translateX(vwt(-217)) scale(0.75) !important;
+      }
+
+      @media (min-width: $screen-tl) {
+        transform: translateX(vwti(-217)) scale(0.75) !important;
+      }
+
+      @media (min-width: $screen-d) {
+        transform: translateX(vwxl(-217)) scale(0.75) !important;
+      }
+
+      & + .swiper-slide {
+        z-index: 1;
+        transform: translateX(vwm(-596)) scale(0.5) !important;
+
+        @media (min-width: $screen-t) {
+          transform: translateX(vwt(-596)) scale(0.5) !important;
+        }
+
+        @media (min-width: $screen-tl) {
+          transform: translateX(vwti(-596)) scale(0.5) !important;
+        }
+
+        @media (min-width: $screen-d) {
+          transform: translateX(vwxl(-596)) scale(0.5) !important;
+        }
+
+        & + .swiper-slide {
+          transform: translateX(vwm(-700)) scale(0.5) !important;
+
+          @media (min-width: $screen-t) {
+            transform: translateX(vwt(-700)) scale(0.5) !important;
+          }
+
+          @media (min-width: $screen-tl) {
+            transform: translateX(vwti(-920)) scale(0.5) !important;
+          }
+
+          @media (min-width: $screen-d) {
+            transform: translateX(vwxl(-596)) scale(0.5) !important;
+          }
+        }
+      }
+    }
+
+    &.swiper-slide-active {
+      z-index: 3;
+      transform: scale(1) !important;
+    }
+  }
+
+  &__slide-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: vwm(5);
+
+    @media (min-width: $screen-t) {
+      border-radius: vwt(5);
+    }
+
+    @media (min-width: $screen-tl) {
+      border-radius: vwti(5);
+    }
+
+    @media (min-width: $screen-d) {
+      border-radius: vwxl(5);
+    }
+  }
+
+  &__pagination {
+    bottom: vwm(-56) !important;
+
+    @media (min-width: $screen-t) {
+      bottom: vwt(-56) !important;
+    }
+
+    @media (min-width: $screen-tl) {
+      bottom: vwti(-56) !important;
+    }
+
+    @media (min-width: $screen-d) {
+      bottom: vwxl(-56) !important;
+    }
+  }
+}

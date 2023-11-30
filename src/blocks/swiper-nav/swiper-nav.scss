@@ -1,0 +1,61 @@
+@import "../../scss/breakpoints";
+@import "../../scss/mixins/scaling";
+
+.swiper-nav {
+  $block-name: &; // #{$block-name}__element
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @media (min-width: $screen-tl) {
+    gap: vwti(40);
+  }
+
+  @media (min-width: $screen-d) {
+    gap: vwxl(40);
+  }
+
+  &__prev,
+  &__next {
+    width: vwxl(50);
+    height: vwxl(50);
+    overflow: hidden;
+    cursor: pointer;
+    transition: 0.3s ease;
+
+    &:hover {
+      width: vwxl(100);
+
+      #{$block-name} {
+        &__prev-icon,
+        &__next-icon {
+          color: var(--front-secondary);
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        }
+
+        &__next-icon {
+          transform: translate(0, -50%);
+        }
+      }
+    }
+  }
+
+  &__prev-icon,
+  &__next-icon {
+    position: relative;
+    top: 50%;
+    width: vwxl(100);
+    height: vwxl(20);
+    transition: 0.3s ease;
+    clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
+  }
+
+  &__prev-icon {
+    transform: translate(0, -50%) rotate(180deg);
+  }
+
+  &__next-icon {
+    transform: translate(-2.604vw, -50%);
+  }
+}
