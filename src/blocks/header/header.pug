@@ -20,7 +20,7 @@ mixin header(mods)
 
   header.header(class= allMods)&attributes(attributes)
     +menu()(class='header__menu')
-    .container.container--large.header__container
+    .container.header__container
       svg.logo.header__logo
         use(href= src.icon + 'logo-default')
       ul.header__nav

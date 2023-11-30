@@ -7,8 +7,8 @@ block variables
   - metaKeywords = 'keywords'
 
 block content
-  section.hero
-    .container.container--large.hero__container
+  section.section.hero
+    .hero__container.container.grid
       +circle-text()(class='hero__circle-text d-none-desktop')
       .hero__content
         h1.hero__title Художественная
@@ -36,6 +36,87 @@ block content
           +button('link', 'Бесплатное пробное занятие', 'primary, large', '', '', '#')(class='advantages__button', data-hystmodal='#free-lesson')
       .hero__image-wrapper
         img.hero__image(src= src.img + 'hero.jpg', srcset= src.img + 'hero@2x.jpg 2x', alt='')
-  //svg.library__icon
-    use(href= src.icon + 'icon__default')
-  //img.library__img(src= src.img + 'img__gulp.jpg', alt='Gulp logo')
+  section.section.about
+    .container.grid.grid--col12
+      .about__left
+        .about__image-wrapper
+          img.about__image(src= src.img + 'about.jpg', srcset= src.img + 'about@2x.jpg 2x', alt='')
+      .about__subtitle О спортивном клубе художественной гимнастики
+      h2.about__title
+        span Колибри
+      .about__delimiter
+      .about__text.
+        центр художественной гимнастики для детей от 3 до 8 лет. Мы готовим будущих спортсменов, активно участвуем в
+        соревнованиях и сборах, заботимся о гармоничном физическом и эстетическом развитии наших учениц.
+        Добро пожаловать в мир большого спорта!
+      .about__items
+        .about__item.about-item
+          svg.about-item__icon
+            use(href= src.icon + 'about-1')
+          .about-item__text Работаем более <br> 10 лет
+        .about__item.about-item
+          svg.about-item__icon
+            use(href= src.icon + 'about-2')
+          .about-item__text Удобное <br> месторасположение
+        .about__item.about-item
+          svg.about-item__icon
+            use(href= src.icon + 'about-3')
+          .about-item__text Квалифицированные <br> тренеры со стажем <br> более 5 лет
+        .about__item.about-item.about-item--large-gap
+          svg.about-item__icon
+            use(href= src.icon + 'about-4')
+          .about-item__text При подготовке <br> мы учитываем возрастные <br> особенности
+        .about__item.about-item.about-item--large-gap
+          svg.about-item__icon
+            use(href= src.icon + 'about-5')
+          .about-item__text Ребёнка ожидают: выезды и сборы, внутренние <br> соревнования в клубе, большой спорт
+  section.section.coaches
+    .coaches__container.container.grid.grid--col12
+      .coaches__left
+        .coaches__image-wrapper
+          img.coaches__image(src= src.img + 'coaches.jpg', srcset= src.img + 'coaches@2x.jpg 2x', alt='')
+      .coaches__subtitle Тренерский состав
+      h2.coaches__title Мария&ensp;<span>Иванова</span>
+      .coaches__text
+        p.
+          Мастер Спорта по художественной гимнастике. <br> С 6 лет занималась в Училище Олимпийского Резерва <br> под
+          руководством лучших тренеров России.
+        p.
+          Неоднократная победительница Российских <br> и Всероссийских соревнований в групповых упражнениях.
+        p Тренерский стаж работы — <b>5 лет</b> <br> Образование — <b>Высшее</b>
+  section.section.clients
+    .container.grid.grid--col12
+      .section__top
+        h2.clients__title
+          span Наши воспитанницы
+        .clients__nav.swiper-nav
+          .swiper-nav__prev
+            svg.swiper-nav__prev-icon
+              use(href= src.icon + 'arrow-right')
+          .swiper-nav__next
+            svg.swiper-nav__next-icon
+              use(href= src.icon + 'arrow-right')
+      .clients__wrapper
+        .clients__swiper.swiper
+          .swiper-wrapper
+            .swiper-slide.clients__slide
+              img.clients__slide-image(src= src.img + 'clients-1.jpg', srcset= src.img + 'clients-1@2x.jpg 2x', alt='')
+            .swiper-slide.clients__slide
+              img.clients__slide-image(src= src.img + 'clients-2.jpg', srcset= src.img + 'clients-2@2x.jpg 2x', alt='')
+            .swiper-slide.clients__slide
+              img.clients__slide-image(src= src.img + 'clients-3.jpg', srcset= src.img + 'clients-3@2x.jpg 2x', alt='')
+            .swiper-slide.clients__slide
+              img.clients__slide-image(src= src.img + 'clients-4.jpg', srcset= src.img + 'clients-4@2x.jpg 2x', alt='')
+            .swiper-slide.clients__slide
+              img.clients__slide-image(src= src.img + 'clients-5.jpg', srcset= src.img + 'clients-5@2x.jpg 2x', alt='')
+            .swiper-slide.clients__slide
+              img.clients__slide-image(src= src.img + 'clients-1.jpg', srcset= src.img + 'clients-1@2x.jpg 2x', alt='')
+            .swiper-slide.clients__slide
+              img.clients__slide-image(src= src.img + 'clients-2.jpg', srcset= src.img + 'clients-2@2x.jpg 2x', alt='')
+            .swiper-slide.clients__slide
+              img.clients__slide-image(src= src.img + 'clients-3.jpg', srcset= src.img + 'clients-3@2x.jpg 2x', alt='')
+            .swiper-slide.clients__slide
+              img.clients__slide-image(src= src.img + 'clients-4.jpg', srcset= src.img + 'clients-4@2x.jpg 2x', alt='')
+            .swiper-slide.clients__slide
+              img.clients__slide-image(src= src.img + 'clients-5.jpg', srcset= src.img + 'clients-5@2x.jpg 2x', alt='')
+          .clients__pagination.swiper-pagination

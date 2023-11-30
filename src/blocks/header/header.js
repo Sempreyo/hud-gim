@@ -4,6 +4,7 @@ import HystModal from "hystmodal";
 
 ready(function () {
   const header = document.querySelector(".header");
+  const headerParent = document.querySelector(".page__header");
   const burger = document.querySelector(".header__burger");
   const menuClose = document.querySelector(".menu__close");
   const HEADER_SCROLL_BG = 50;
@@ -19,9 +20,9 @@ ready(function () {
 
   /* Smart header */
   let previousTop = window.scrollY;
-  header.classList.remove("header--hide");
+  headerParent.classList.remove("header--hide");
 
-  document.addEventListener("scroll", () => {
+  const setHeaderStyles = () => {
     let currentTop = window.scrollY;
 
     if (currentTop > HEADER_SCROLL_BG) {
@@ -31,14 +32,16 @@ ready(function () {
     }
 
     if (currentTop > HEADER_SCROLL_HIDE && currentTop > previousTop) {
-      header.classList.add("header--hide");
+      headerParent.classList.add("header--hide");
     } else {
-      header.classList.remove("header--hide");
+      headerParent.classList.remove("header--hide");
     }
     previousTop = currentTop;
+  };
 
-    /*document.querySelectorAll(".menu-curtain").forEach((el) => {
-      el.classList.remove("opened");
-    });*/
+  document.addEventListener("scroll", () => {
+    setHeaderStyles();
   });
+
+  setHeaderStyles();
 });

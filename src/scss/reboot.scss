@@ -16,6 +16,7 @@ html {
   font-size: var(--font-size-root);
   font-family: sans-serif;
   line-height: normal;
+  font-variant-numeric: lining-nums proportional-nums;
   -webkit-tap-highlight-color: rgb(var(--color-black) 0);
   -webkit-text-size-adjust: 100%; // stylelint-disable-line
   scroll-behavior: smooth;
@@ -46,7 +47,7 @@ svg {
 .d-none-mobile {
   display: none;
 
-  @media (min-width: $screen-ti) {
+  @media (min-width: $screen-tl) {
     display: block;
   }
 }
@@ -54,7 +55,7 @@ svg {
 .d-none-desktop {
   display: block;
 
-  @media (min-width: $screen-ti) {
+  @media (min-width: $screen-tl) {
     display: none;
   }
 }

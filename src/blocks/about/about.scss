@@ -1,0 +1,211 @@
+@import "../../scss/breakpoints";
+@import "../../scss/mixins/scaling";
+@import "../../scss/mixins/text-styles";
+
+.about {
+  $block-name: &; // #{$block-name}__element
+
+  padding: vwm(105) 0 vwm(75);
+
+  @media (min-width: $screen-t) {
+    padding: vwt(105) 0 vwt(75);
+  }
+
+  @media (min-width: $screen-tl) {
+    padding: vwti(100) 0 vwti(80);
+  }
+
+  @media (min-width: $screen-d) {
+    padding: vwxl(50) 0 vwxl(125);
+  }
+
+  &__left {
+    display: none;
+    grid-row: 1 / span 4;
+    grid-column: 1 / span 2;
+    justify-content: center;
+
+    @media (min-width: $screen-tl) {
+      display: flex;
+      grid-column: 2 / span 4;
+    }
+  }
+
+  &__image-wrapper {
+    position: relative;
+    width: 75%;
+    height: 0;
+    padding-top: 100%;
+    overflow: hidden;
+  }
+
+  &__image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: vwm(5);
+    inset: 0;
+
+    @media (min-width: $screen-t) {
+      border-radius: vwt(5);
+    }
+
+    @media (min-width: $screen-tl) {
+      border-radius: vwti(5);
+    }
+
+    @media (min-width: $screen-d) {
+      border-radius: vwxl(5);
+    }
+  }
+
+  &__subtitle,
+  &__title,
+  &__delimiter {
+    @media (min-width: $screen-tl) {
+      padding-left: vwti(40);
+    }
+
+    @media (min-width: $screen-d) {
+      padding-left: vwxl(40);
+    }
+  }
+
+  &__subtitle,
+  &__title {
+    grid-column: 1 / span 4;
+
+    @media (min-width: $screen-tl) {
+      grid-column: 6 / span 6;
+    }
+  }
+
+  &__subtitle {
+    @include subtitle;
+
+    max-width: vwm(200);
+
+    @media (min-width: $screen-t) {
+      max-width: vwt(200);
+    }
+
+    @media (min-width: $screen-tl) {
+      max-width: vwti(320);
+      padding-top: vwti(93);
+    }
+
+    @media (min-width: $screen-d) {
+      max-width: vwxl(320);
+      padding-top: vwxl(93);
+    }
+  }
+
+  &__title {
+    @include medium-title;
+
+    margin: 0;
+
+    @media (min-width: $screen-tl) {
+      margin: vwti(8) 0 0;
+    }
+
+    @media (min-width: $screen-d) {
+      margin: vwxl(8) 0 0;
+    }
+  }
+
+  &__delimiter {
+    grid-column: 1 / span 1;
+
+    @media (min-width: $screen-tl) {
+      grid-column: 6 / span 1;
+    }
+
+    &::before {
+      display: block;
+      width: vwm(60);
+      height: vwm(1);
+      margin-top: vwm(8);
+      background-color: var(--front-primary-50);
+      content: "";
+
+      @media (min-width: $screen-t) {
+        width: vwt(60);
+        height: vwt(1);
+        margin-top: vwt(8);
+      }
+
+      @media (min-width: $screen-tl) {
+        width: vwti(60);
+        height: vwti(1);
+        margin-top: vwti(4);
+      }
+
+      @media (min-width: $screen-d) {
+        width: vwxl(60);
+        height: vwxl(1);
+        margin-top: vwxl(4);
+      }
+    }
+  }
+
+  &__text {
+    @include text;
+
+    grid-column: 2 / span 3;
+    margin-top: 0;
+
+    @media (min-width: $screen-tl) {
+      grid-column: 7 / span 5;
+      margin-top: vwti(-16);
+    }
+
+    @media (min-width: $screen-d) {
+      margin-top: vwxl(-16);
+    }
+  }
+
+  &__items {
+    display: flex;
+    flex-flow: column wrap;
+    grid-column: 2 / span 2;
+    gap: vwm(25);
+    margin-top: vwm(20);
+
+    @media (min-width: $screen-t) {
+      flex-direction: row;
+      grid-column: 2 / span 3;
+      gap: vwt(15);
+      margin-top: vwt(20);
+    }
+
+    @media (min-width: $screen-tl) {
+      grid-column: 6 / span 6;
+      gap: vwti(50) vwti(15);
+      margin-top: vwti(25);
+    }
+
+    @media (min-width: $screen-d) {
+      grid-column: 7 / span 5;
+      gap: vwxl(50) vwxl(15);
+      margin-top: vwxl(25);
+    }
+  }
+
+  &__item {
+    width: 100%;
+
+    @media (min-width: $screen-t) {
+      width: calc(100% / 2 - 2.604vw / 2);
+    }
+
+    @media (min-width: $screen-tl) {
+      width: calc(100% / 3 - 1.512vw / 3 * 2);
+    }
+
+    @media (min-width: $screen-d) {
+      width: calc(100% / 3 - 0.781vw / 3 * 2);
+    }
+  }
+}

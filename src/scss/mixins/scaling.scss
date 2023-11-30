@@ -2,6 +2,14 @@
   @return calc(($px/1920) * 100)+vw;
 }
 
+@function vwti($px) {
+  @return calc(($px/992) * 100)+vw;
+}
+
+@function vwt($px) {
+  @return calc(($px/576) * 100)+vw;
+}
+
 @function vwm($px) {
   @return calc(($px/360) * 100)+vw;
 }

@@ -84,6 +84,7 @@
     "stylelint-order": "^5.0.0",
     "stylelint-scss": "^4.3.0",
     "stylelint-selector-bem-pattern": "^2.1.0",
+    "swiper": "^11.0.3",
     "through2": "^4.0.2",
     "webpack": "^5.21.1",
     "webpack-stream": "^7.0.0"

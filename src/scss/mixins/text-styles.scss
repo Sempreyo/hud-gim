@@ -8,28 +8,135 @@
   line-height: 1;
 }
 
-@mixin hero-title {
+@mixin large-title {
   font-weight: 400;
-  font-size: vwm(45);
+  font-size: fluid(45, 80, 320, 768);
   font-family: var(--font-dance);
   line-height: 0.9;
   white-space: nowrap;
 
-  @media (min-width: $screen-ti) {
-    font-size: vwxl(150);
+  @media (min-width: $screen-tl) {
+    font-size: fluid(80, 150, 768, 1680);
     line-height: 0.65;
+  }
+
+  @media (min-width: $screen-dxl) {
+    font-size: 150px;
+  }
+
+  span {
+    color: var(--front-secondary);
+  }
+}
+
+@mixin medium-title {
+  font-weight: 400;
+  font-size: fluid(80, 90, 320, 768);
+  font-family: var(--font-dance);
+  line-height: 1;
+
+  @media (min-width: $screen-tl) {
+    font-size: fluid(90, 120, 768, 1680);
+  }
+
+  @media (min-width: $screen-dxl) {
+    font-size: 120px;
+  }
+
+  span {
+    color: var(--front-secondary);
+  }
+}
+
+@mixin small-title {
+  font-weight: 400;
+  font-size: fluid(80, 90, 320, 768);
+  font-family: var(--font-dance);
+  line-height: 1;
+  letter-spacing: vwm(0.7);
+
+  @media (min-width: $screen-tl) {
+    font-size: fluid(90, 100, 768, 1680);
+    letter-spacing: vwti(1);
+  }
+
+  @media (min-width: $screen-dxl) {
+    font-size: 100px;
+    letter-spacing: vwxl(1);
+  }
+
+  span {
+    color: var(--front-secondary);
+  }
+}
+
+@mixin subtitle {
+  color: var(--front-primary-50);
+  font-weight: 600;
+  font-size: fluid(10, 13, 320, 768);
+  line-height: 1.5;
+  letter-spacing: vwm(0.5);
+  text-transform: uppercase;
+
+  @media (min-width: $screen-tl) {
+    font-size: fluid(13, 15, 768, 1680);
+    line-height: 1.35;
+    letter-spacing: vwti(0.75);
+  }
+
+  @media (min-width: $screen-dxl) {
+    font-size: 15px;
+    letter-spacing: vwxl(0.75);
+  }
+}
+
+@mixin text {
+  font-weight: 300;
+  font-size: fluid(14, 16, 320, 768);
+  line-height: 1.42;
+  letter-spacing: vwm(0.28);
+
+  @media (min-width: $screen-tl) {
+    font-size: fluid(16, 20, 768, 1680);
+    line-height: 2;
+    letter-spacing: vwti(0.4);
+  }
+
+  @media (min-width: $screen-dxl) {
+    font-size: 20px;
+    letter-spacing: vwxl(0.4);
   }
 }
 
 @mixin button-title {
   font-weight: 500;
-  font-size: 15px;
+  font-size: fluid(15, 18, 320, 768);
   line-height: 1;
   letter-spacing: 0.3px;
 
-  @media (min-width: $screen-ti) {
-    font-size: 20px;
+  @media (min-width: $screen-tl) {
+    font-size: fluid(18, 20, 768, 1680);
     letter-spacing: 0.4px;
+  }
+
+  @media (min-width: $screen-dxl) {
+    font-size: 20px;
+  }
+}
+
+@mixin button-title-large {
+  font-weight: 500;
+  font-size: fluid(15, 20, 320, 768);
+  line-height: 1;
+  letter-spacing: 0.3px;
+
+  @media (min-width: $screen-tl) {
+    font-size: fluid(20, 25, 768, 1680);
+    letter-spacing: 0.4px;
+  }
+
+  @media (min-width: $screen-dxl) {
+    font-size: 25px;
   }
 }
 
@@ -48,7 +155,7 @@
 @mixin fluid-text {
   font-size: fluid(24, 32, 320, 768);
 
-  @media screen and (min-width: $screen-ti) {
+  @media screen and (min-width: $screen-tl) {
     font-size: fluid(32, 48, 768, 1280);
   }
 
