@@ -1,0 +1,35 @@
+@import "../../scss/breakpoints";
+@import "../../scss/mixins/scaling";
+
+.swiper-pagination {
+  $block-name: &; // #{$block-name}__element
+
+  .swiper-pagination-bullet {
+    width: vwm(15);
+    height: vwm(15);
+    margin: 0 vwm(10) !important;
+    background-color: transparent;
+    border: vwm(2) solid var(--front-secondary);
+
+    @media (min-width: $screen-t) {
+      width: vwt(15);
+      height: vwt(15);
+      margin: 0 vwt(10) !important;
+      border: vwt(2) solid var(--front-secondary);
+    }
+
+    @media (min-width: $screen-tl) {
+      width: vwti(15);
+      height: vwti(15);
+      margin: 0 vwti(10) !important;
+      border: vwti(2) solid var(--front-secondary);
+    }
+
+    @media (min-width: $screen-d) {
+      width: vwxl(15);
+      height: vwxl(15);
+      margin: 0 vwxl(10) !important;
+      border: vwxl(2) solid var(--front-secondary);
+    }
+  }
+}

@@ -1,0 +1,86 @@
+@import "../../scss/breakpoints";
+@import "../../scss/mixins/scaling";
+
+.about-item {
+  $block-name: &; // #{$block-name}__element
+
+  display: flex;
+  flex-direction: column;
+  gap: vwm(10);
+  align-items: flex-start;
+
+  @media (min-width: $screen-t) {
+    gap: vwt(10);
+  }
+
+  @media (min-width: $screen-tl) {
+    gap: vwti(15);
+    align-items: center;
+  }
+
+  @media (min-width: $screen-d) {
+    gap: vwxl(15);
+  }
+
+  &--large-gap {
+    gap: vwm(10);
+
+    @media (min-width: $screen-t) {
+      gap: vwt(10);
+    }
+
+    @media (min-width: $screen-tl) {
+      gap: vwti(30);
+    }
+
+    @media (min-width: $screen-d) {
+      gap: vwxl(30);
+    }
+  }
+
+  &__icon {
+    width: vwm(50);
+    height: vwm(50);
+
+    @media (min-width: $screen-t) {
+      width: vwt(50);
+      height: vwt(50);
+    }
+
+    @media (min-width: $screen-tl) {
+      width: vwti(50);
+      height: vwti(50);
+    }
+
+    @media (min-width: $screen-d) {
+      width: vwxl(50);
+      height: vwxl(50);
+    }
+  }
+
+  &__text {
+    font-weight: 300;
+    font-size: fluid(15, 16, 320, 768);
+    line-height: 1.33;
+    letter-spacing: vwm(0.3);
+
+    @media (min-width: $screen-t) {
+      letter-spacing: vwt(0.3);
+    }
+
+    @media (min-width: $screen-tl) {
+      font-size: fluid(16, 17, 768, 1680);
+      line-height: 1.18;
+      letter-spacing: vwti(0.34);
+      text-align: center;
+    }
+
+    @media (min-width: $screen-d) {
+      letter-spacing: vwxl(0.34);
+    }
+
+    @media (min-width: $screen-dxl) {
+      font-size: 17px;
+    }
+  }
+}

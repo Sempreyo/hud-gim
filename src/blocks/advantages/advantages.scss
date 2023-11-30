@@ -8,7 +8,16 @@
   padding: vwm(20) vwm(15) vwm(50) vwm(15);
   background-color: var(--front-invert);
 
-  @media (min-width: $screen-ti) {
+  @media (min-width: $screen-t) {
+    padding: vwt(20) vwt(15) vwt(50) vwt(15);
+  }
+
+  @media (min-width: $screen-tl) {
+    max-width: vwti(755);
+    padding: vwti(26) vwti(30) vwti(95) vwti(100);
+  }
+
+  @media (min-width: $screen-d) {
     max-width: vwxl(755);
     padding: vwxl(26) vwxl(30) vwxl(95) vwxl(245);
   }
@@ -20,7 +29,15 @@
     flex-direction: column;
     gap: vwm(10);
 
-    @media (min-width: $screen-ti) {
+    @media (min-width: $screen-t) {
+      gap: vwt(10);
+    }
+
+    @media (min-width: $screen-tl) {
+      gap: vwti(15);
+    }
+
+    @media (min-width: $screen-d) {
       gap: vwxl(15);
     }
   }
@@ -30,7 +47,15 @@
     gap: vwm(10);
     align-items: center;
 
-    @media (min-width: $screen-ti) {
+    @media (min-width: $screen-t) {
+      gap: vwt(10);
+    }
+
+    @media (min-width: $screen-tl) {
+      gap: vwti(10);
+    }
+
+    @media (min-width: $screen-d) {
       gap: vwxl(10);
     }
   }
@@ -39,7 +64,17 @@
     width: vwm(20);
     height: vwm(20);
 
-    @media (min-width: $screen-ti) {
+    @media (min-width: $screen-t) {
+      width: vwt(20);
+      height: vwt(20);
+    }
+
+    @media (min-width: $screen-tl) {
+      width: vwti(30);
+      height: vwti(30);
+    }
+
+    @media (min-width: $screen-d) {
       width: vwxl(30);
       height: vwxl(30);
     }
@@ -47,12 +82,24 @@
 
   &__list-item-text {
     font-weight: 300;
-    font-size: vwm(15);
+    font-size: fluid(15, 17, 320, 768);
     letter-spacing: vwm(0.3);
 
-    @media (min-width: $screen-ti) {
-      font-size: vwxl(20);
+    @media (min-width: $screen-t) {
+      letter-spacing: vwt(0.3);
+    }
+
+    @media (min-width: $screen-tl) {
+      font-size: fluid(17, 20, 768, 1680);
+      letter-spacing: vwti(0.4);
+    }
+
+    @media (min-width: $screen-d) {
       letter-spacing: vwxl(0.4);
+    }
+
+    @media (min-width: $screen-dxl) {
+      font-size: 20px;
     }
 
     span {
@@ -65,14 +112,27 @@
     bottom: vwm(-24);
     left: vwm(23);
     padding: vwm(15) vwm(30) !important;
-    font-size: vwm(15) !important;
     letter-spacing: vwm(0.3) !important;
+    white-space: nowrap;
 
-    @media (min-width: $screen-ti) {
+    @media (min-width: $screen-t) {
+      bottom: vwt(-24);
+      left: vwt(23);
+      padding: vwt(15) vwt(30) !important;
+      letter-spacing: vwt(0.3) !important;
+    }
+
+    @media (min-width: $screen-tl) {
+      bottom: vwti(-40);
+      left: vwti(245);
+      padding: vwti(25) vwti(40) !important;
+      letter-spacing: vwti(0.4) !important;
+    }
+
+    @media (min-width: $screen-d) {
       bottom: vwxl(-40);
       left: vwxl(245);
-      padding: vwxl(20) vwxl(40) !important;
-      font-size: vwxl(20) !important;
+      padding: vwxl(25) vwxl(40) !important;
       letter-spacing: vwxl(0.4) !important;
     }
   }

@@ -1,0 +1,262 @@
+@import "../../scss/breakpoints";
+@import "../../scss/mixins/scaling";
+@import "../../scss/mixins/text-styles";
+
+.coaches {
+  $block-name: &; // #{$block-name}__element
+
+  position: relative;
+  padding: vwm(25) 0 vwm(71);
+
+  @media (min-width: $screen-t) {
+    padding: vwt(25) 0 vwt(71);
+  }
+
+  @media (min-width: $screen-tl) {
+    padding: vwti(75);
+  }
+
+  @media (min-width: $screen-d) {
+    padding: vwxl(75) 0 vwxl(215);
+  }
+
+  &--animated {
+    &::before {
+      height: vwm(250) !important;
+
+      @media (min-width: $screen-t) {
+        height: vwt(250) !important;
+      }
+
+      @media (min-width: $screen-tl) {
+        height: vwti(600) !important;
+      }
+
+      @media (min-width: $screen-d) {
+        height: vwxl(600) !important;
+      }
+    }
+
+    &::after {
+      height: vwm(400) !important;
+
+      @media (min-width: $screen-t) {
+        height: vwt(400) !important;
+      }
+
+      @media (min-width: $screen-tl) {
+        height: vwti(600) !important;
+      }
+
+      @media (min-width: $screen-d) {
+        height: vwxl(600) !important;
+      }
+    }
+  }
+
+  &::before,
+  &::after {
+    position: absolute;
+    display: block;
+    background-color: var(--back-secondary-20);
+    content: "";
+  }
+
+  &::before {
+    top: vwm(115);
+    left: 0;
+    width: vwm(171);
+    height: 0;
+    transition: height 0.8s ease-in-out;
+
+    @media (min-width: $screen-t) {
+      top: vwt(115);
+      width: vwt(171);
+    }
+
+    @media (min-width: $screen-tl) {
+      top: vwti(190);
+      width: vwti(400);
+    }
+
+    @media (min-width: $screen-d) {
+      top: vwxl(190);
+      width: vwxl(890);
+    }
+  }
+
+  &::after {
+    top: vwm(-400);
+    right: 0;
+    width: vwm(40);
+    height: 0;
+    transition: height 0.8s ease-in-out 0.1s;
+
+    @media (min-width: $screen-t) {
+      top: vwt(-400);
+      width: vwt(40);
+    }
+
+    @media (min-width: $screen-tl) {
+      top: vwti(-200);
+      width: vwti(40);
+    }
+
+    @media (min-width: $screen-d) {
+      top: vwxl(-200);
+      width: vwxl(40);
+    }
+  }
+
+  &__container {
+    @media (min-width: $screen-tl) {
+      grid-template-rows: auto 0.55fr 1fr;
+    }
+  }
+
+  &__left {
+    grid-column: 1 / span 4;
+
+    @media (min-width: $screen-tl) {
+      grid-row: 1 / span 3;
+      grid-column: 2 / span 4;
+    }
+  }
+
+  &__image-wrapper {
+    position: relative;
+    width: 76%;
+    height: 0;
+    padding-top: 76%;
+    overflow: hidden;
+
+    @media (min-width: $screen-tl) {
+      width: 100%;
+      padding-top: 100%;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: vwm(5);
+    inset: 0;
+
+    @media (min-width: $screen-t) {
+      border-radius: vwt(5);
+    }
+
+    @media (min-width: $screen-tl) {
+      border-radius: vwti(5);
+    }
+
+    @media (min-width: $screen-d) {
+      border-radius: vwxl(5);
+    }
+  }
+
+  &__subtitle {
+    @include subtitle;
+
+    grid-row: 1 / span 1;
+    grid-column: 1 / span 4;
+
+    @media (min-width: $screen-tl) {
+      grid-column: 6 / span 6;
+      max-width: vwti(320);
+      padding-top: vwti(50);
+      padding-left: vwti(40);
+    }
+
+    @media (min-width: $screen-d) {
+      max-width: vwxl(320);
+      padding-top: vwxl(50);
+      padding-left: vwxl(40);
+    }
+  }
+
+  &__title {
+    @include small-title;
+
+    grid-column: 1 / span 4;
+    height: 100%;
+    margin: vwm(20) 0 0;
+    font-size: vwm(70);
+
+    @media (min-width: $screen-t) {
+      margin: vwt(20) 0 0;
+      font-size: vwt(70);
+    }
+
+    @media (min-width: $screen-tl) {
+      display: flex;
+      flex-wrap: wrap;
+      grid-column: 7 / span 5;
+      align-items: flex-end;
+      margin: 0;
+      font-size: vwti(100);
+    }
+
+    @media (min-width: $screen-d) {
+      font-size: vwxl(100);
+    }
+  }
+
+  &__text {
+    @include text;
+
+    grid-column: 2 / span 3;
+    margin-top: vwm(12);
+    font-size: fluid(15, 18, 320, 768);
+    line-height: 1.33;
+    letter-spacing: vwm(0.3);
+
+    @media (min-width: $screen-t) {
+      margin-top: vwt(12);
+      letter-spacing: vwt(0.3);
+    }
+
+    @media (min-width: $screen-tl) {
+      grid-column: 7 / span 5;
+      margin-top: vwti(10);
+      font-size: fluid(18, 20, 768, 1680);
+      line-height: 2;
+      letter-spacing: vwti(0.4);
+    }
+
+    @media (min-width: $screen-d) {
+      margin-top: vwxl(10);
+      letter-spacing: vwxl(0.4);
+    }
+
+    @media (min-width: $screen-dxl) {
+      font-size: 20px;
+    }
+
+    b {
+      font-weight: 600;
+    }
+
+    p {
+      margin: 0;
+
+      & + p {
+        margin-top: vwm(24);
+
+        @media (min-width: $screen-t) {
+          margin-top: vwt(24);
+        }
+
+        @media (min-width: $screen-tl) {
+          margin-top: vwti(24);
+        }
+
+        @media (min-width: $screen-d) {
+          margin-top: vwxl(24);
+        }
+      }
+    }
+  }
+}

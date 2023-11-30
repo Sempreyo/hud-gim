@@ -9,7 +9,7 @@
   flex-direction: column;
   gap: 30px;
 
-  @media (min-width: $screen-ti) {
+  @media (min-width: $screen-tl) {
     gap: 50px;
   }
 
@@ -18,7 +18,7 @@
     top: 15px;
     right: 15px;
 
-    @media (min-width: $screen-ti) {
+    @media (min-width: $screen-tl) {
       top: 30px;
       right: 30px;
     }
@@ -29,7 +29,7 @@
     font-size: 20px;
     line-height: 1.25;
 
-    @media (min-width: $screen-ti) {
+    @media (min-width: $screen-tl) {
       font-size: 25px;
       line-height: 1.2;
     }
@@ -42,7 +42,7 @@
     line-height: 1.33;
     letter-spacing: 0.3px;
 
-    @media (min-width: $screen-ti) {
+    @media (min-width: $screen-tl) {
       font-size: 20px;
       line-height: 1.52;
       letter-spacing: 0.4px;
@@ -54,7 +54,7 @@
     flex-direction: column;
     gap: 10px;
 
-    @media (min-width: $screen-ti) {
+    @media (min-width: $screen-tl) {
       gap: 15px;
     }
   }
@@ -62,7 +62,7 @@
   &__submit {
     padding: 15px 30px;
 
-    @media (min-width: $screen-ti) {
+    @media (min-width: $screen-tl) {
       padding: 25px 40px;
     }
   }
@@ -73,7 +73,7 @@
     line-height: 1.45;
     letter-spacing: 0.28px;
 
-    @media (min-width: $screen-ti) {
+    @media (min-width: $screen-tl) {
       font-size: 15px;
       line-height: 1.33;
       letter-spacing: 0.3px;

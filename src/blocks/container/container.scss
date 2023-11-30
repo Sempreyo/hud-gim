@@ -4,25 +4,11 @@
 .container {
   box-sizing: border-box;
   width: 100%;
-  max-width: vwm(1136);
   height: 100%;
   margin: 0 auto;
-  padding: 0 vwm(15);
+  padding: 0 15px;
 
-  @media (min-width: $screen-ti) {
-    max-width: vwxl(1136);
-    padding: 0 vwxl(15);
-  }
-
-  @media screen and (min-width: $screen-dl) {
-    padding: 0 vwxl(40);
-  }
-
-  &--large {
-    max-width: 100%;
-
-    @media (min-width: $screen-ti) {
-      max-width: vwxl(1920);
-    }
+  @media (min-width: $screen-tl) {
+    padding: 0 40px;
   }
 }

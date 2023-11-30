@@ -15,7 +15,7 @@
   transition: 0.25s ease-out;
   appearance: none;
 
-  @media (min-width: $screen-ti) {
+  @media (min-width: $screen-tl) {
     height: 70px;
     padding: 20px 30px;
     font-size: 20px;
@@ -27,7 +27,7 @@
     line-height: 1.5;
     letter-spacing: 0.4px;
 
-    @media (min-width: $screen-ti) {
+    @media (min-width: $screen-tl) {
       font-size: 20px;
     }
   }

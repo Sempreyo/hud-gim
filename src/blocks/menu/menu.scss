@@ -11,6 +11,10 @@
   transform: translateX(-100%);
   transition: 0.3s ease;
 
+  @media (min-width: $screen-t) {
+    padding: vwt(15) 0 vwt(40);
+  }
+
   [data-state="mobile-menu"] & {
     transform: translateX(0);
   }
@@ -21,6 +25,10 @@
     gap: vwm(60);
     align-items: center;
     justify-content: space-between;
+
+    @media (min-width: $screen-t) {
+      gap: vwt(60);
+    }
   }
 
   &__close {
@@ -28,7 +36,17 @@
     top: vwm(15);
     right: vwm(15);
 
-    @media (min-width: $screen-ti) {
+    @media (min-width: $screen-t) {
+      top: vwt(15);
+      right: vwt(15);
+    }
+
+    @media (min-width: $screen-tl) {
+      top: vwti(30);
+      right: vwti(30);
+    }
+
+    @media (min-width: $screen-d) {
       top: vwxl(30);
       right: vwxl(30);
     }
@@ -44,17 +62,33 @@
   &__logo {
     width: vwm(161);
     height: vwm(50);
+
+    @media (min-width: $screen-t) {
+      width: vwt(161);
+      height: vwt(50);
+    }
   }
 
   &__phone {
     margin-top: vwm(16);
     font-size: vwm(21);
     letter-spacing: vwm(0.4);
+
+    @media (min-width: $screen-t) {
+      margin-top: vwt(16);
+      font-size: vwt(21);
+      letter-spacing: vwt(0.4);
+    }
   }
 
   &__call {
     margin-top: vwm(23);
     padding: vwm(10) vwm(20);
+
+    @media (min-width: $screen-t) {
+      margin-top: vwt(23);
+      padding: vwt(10) vwt(20);
+    }
   }
 
   &__nav {
@@ -65,6 +99,10 @@
     gap: vwm(25);
     text-align: center;
 
+    @media (min-width: $screen-t) {
+      gap: vwt(25);
+    }
+
     li {
       a {
         font-size: vwm(15);
@@ -72,6 +110,11 @@
         letter-spacing: vwm(0.3);
         text-decoration: none;
         transition: 0.3s ease;
+
+        @media (min-width: $screen-t) {
+          font-size: vwt(15);
+          letter-spacing: vwt(0.3);
+        }
       }
     }
   }
@@ -81,6 +124,10 @@
     gap: vwm(15);
     align-items: center;
 
+    @media (min-width: $screen-t) {
+      gap: vwt(15);
+    }
+
     &:hover #{$block-name}__site-icon {
       color: var(--link-hover);
     }
@@ -89,6 +136,11 @@
       font-size: vwm(15);
       line-height: 1;
       letter-spacing: vwm(0.3);
+
+      @media (min-width: $screen-t) {
+        font-size: vwt(15);
+        letter-spacing: vwt(0.3);
+      }
     }
   }
 
@@ -97,5 +149,10 @@
     height: vwm(25);
     color: var(--front-primary);
     transition: 0.3s ease;
+
+    @media (min-width: $screen-t) {
+      width: vwt(26);
+      height: vwt(25);
+    }
   }
 }

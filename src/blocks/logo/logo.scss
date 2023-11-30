@@ -7,7 +7,17 @@
   width: vwm(161);
   height: vwm(50);
 
-  @media (min-width: $screen-ti) {
+  @media (min-width: $screen-t) {
+    width: vwt(161);
+    height: vwt(50);
+  }
+
+  @media (min-width: $screen-tl) {
+    width: vwti(161);
+    height: vwti(50);
+  }
+
+  @media (min-width: $screen-d) {
     width: vwxl(161);
     height: vwxl(50);
   }

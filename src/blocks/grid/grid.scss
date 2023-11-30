@@ -1,0 +1,28 @@
+@import "../../scss/breakpoints";
+@import "../../scss/mixins/scaling";
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: vwm(10);
+  align-items: flex-start;
+
+  @media (min-width: $screen-t) {
+    gap: vwt(10);
+  }
+
+  @media (min-width: $screen-tl) {
+    grid-template-columns: repeat(6, 1fr);
+    gap: vwti(20);
+  }
+
+  @media (min-width: $screen-d) {
+    gap: vwxl(20);
+  }
+
+  &--col12 {
+    @media (min-width: $screen-tl) {
+      grid-template-columns: repeat(12, 1fr);
+    }
+  }
+}

@@ -5,17 +5,33 @@
 .hero {
   $block-name: &; // #{$block-name}__element
 
-  padding-top: vwm(80);
+  padding-top: vwm(25);
 
-  @media (min-width: $screen-ti) {
-    padding-top: vwxl(155);
+  @media (min-width: $screen-t) {
+    padding-top: vwt(25);
+  }
+
+  @media (min-width: $screen-tl) {
+    padding-top: vwti(25);
+  }
+
+  @media (min-width: $screen-d) {
+    padding-top: vwxl(25);
   }
 
   &--animated {
     &::before {
       height: vwm(490) !important;
 
-      @media (min-width: $screen-ti) {
+      @media (min-width: $screen-t) {
+        height: vwt(490) !important;
+      }
+
+      @media (min-width: $screen-tl) {
+        height: vwti(1000) !important;
+      }
+
+      @media (min-width: $screen-d) {
         height: vwxl(1000) !important;
       }
     }
@@ -41,9 +57,20 @@
     height: 0;
     transition: height 0.8s ease-in-out;
 
-    @media (min-width: $screen-ti) {
-      top: vwxl(208);
+    @media (min-width: $screen-t) {
+      top: vwt(80);
+      width: vwt(170);
+    }
+
+    @media (min-width: $screen-tl) {
+      top: vwti(208);
       bottom: unset;
+      left: 15px;
+      width: vwti(400);
+    }
+
+    @media (min-width: $screen-d) {
+      top: vwxl(208);
       left: vwxl(195);
       width: vwxl(600);
     }
@@ -57,21 +84,24 @@
     height: 0;
     transition: height 0.8s ease-in-out 0.1s;
 
-    @media (min-width: $screen-ti) {
+    @media (min-width: $screen-tl) {
       display: block;
     }
   }
 
   &__container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
     gap: vwm(35) vwm(20);
-    padding-top: vwm(25);
 
-    @media (min-width: $screen-ti) {
-      grid-template-columns: repeat(6, 1fr);
+    @media (min-width: $screen-t) {
+      gap: vwt(35) vwt(20);
+    }
+
+    @media (min-width: $screen-tl) {
+      gap: vwti(20);
+    }
+
+    @media (min-width: $screen-d) {
       gap: vwxl(20);
-      padding-top: 0;
     }
   }
 
@@ -80,21 +110,29 @@
     z-index: 2;
     grid-column: 1 / span 4;
 
-    @media (min-width: $screen-ti) {
+    @media (min-width: $screen-tl) {
+      padding-top: vwti(158);
+    }
+
+    @media (min-width: $screen-d) {
       grid-column: 2 / span 3;
       padding-top: vwxl(158);
     }
   }
 
   &__title {
-    @include hero-title;
+    @include large-title;
 
     margin: 0;
 
     span {
       display: block;
 
-      @media (min-width: $screen-ti) {
+      @media (min-width: $screen-tl) {
+        padding-left: vwti(252);
+      }
+
+      @media (min-width: $screen-d) {
         padding-left: vwxl(252);
       }
     }
@@ -102,14 +140,29 @@
 
   &__subtitle {
     font-weight: 300;
-    font-size: vwm(15);
+    font-size: fluid(15, 20, 320, 768);
     letter-spacing: vwm(0.3);
 
-    @media (min-width: $screen-ti) {
+    @media (min-width: $screen-t) {
+      letter-spacing: vwt(0.3);
+    }
+
+    @media (min-width: $screen-tl) {
+      margin-top: vwti(4);
+      padding-left: vwti(252);
+      font-size: fluid(20, 30, 768, 1680);
+      letter-spacing: vwti(0.6);
+    }
+
+    @media (min-width: $screen-d) {
       margin-top: vwxl(4);
       padding-left: vwxl(252);
       font-size: vwxl(30);
       letter-spacing: vwxl(0.6);
+    }
+
+    @media (min-width: $screen-dxl) {
+      font-size: 30px;
     }
   }
 
@@ -117,7 +170,15 @@
     position: relative;
     margin-top: vwm(30);
 
-    @media (min-width: $screen-ti) {
+    @media (min-width: $screen-t) {
+      margin-top: vwt(30);
+    }
+
+    @media (min-width: $screen-tl) {
+      margin-top: vwti(45);
+    }
+
+    @media (min-width: $screen-d) {
       margin-top: vwxl(45);
     }
   }
@@ -126,12 +187,21 @@
     grid-column: 1 / span 1;
     margin-left: vwm(-33);
 
-    @media (min-width: $screen-ti) {
+    @media (min-width: $screen-t) {
+      margin-left: vwt(-33);
+    }
+
+    @media (min-width: $screen-tl) {
       position: absolute;
-      top: vwxl(-78);
-      left: vwxl(-78);
+      top: vwti(-78);
+      left: vwti(-78);
       grid-column: unset;
       margin-left: 0;
+    }
+
+    @media (min-width: $screen-d) {
+      top: vwxl(-78);
+      left: vwxl(-78);
     }
   }
 
@@ -140,19 +210,27 @@
     z-index: 1;
     grid-row: 1 / 2;
     grid-column: 2 / span 3;
-    width: calc(100% + 4.1667vw);
+    width: calc(100% + 15px);
     height: 0;
-    margin-right: vwm(-15);
+    margin-right: -15px;
     padding-top: 62%;
     overflow: hidden;
     border-radius: vwm(5) 0 0 vwm(5);
 
-    @media (min-width: $screen-ti) {
+    @media (min-width: $screen-t) {
+      border-radius: vwt(5) 0 0 vwt(5);
+    }
+
+    @media (min-width: $screen-tl) {
       grid-row: unset;
       grid-column: 5 / span 2;
       width: 100%;
       margin-right: 0;
       padding-top: 140.84%;
+      border-radius: vwti(5);
+    }
+
+    @media (min-width: $screen-d) {
       border-radius: vwxl(5);
     }
   }

@@ -7,7 +7,17 @@
   height: vwm(100);
   animation: rotating 30s linear infinite;
 
-  @media (min-width: $screen-ti) {
+  @media (min-width: $screen-t) {
+    width: vwt(100);
+    height: vwt(100);
+  }
+
+  @media (min-width: $screen-tl) {
+    width: vwti(156);
+    height: vwti(156);
+  }
+
+  @media (min-width: $screen-d) {
     width: vwxl(156);
     height: vwxl(156);
   }
