@@ -1,0 +1,93 @@
+@import "../../scss/breakpoints";
+@import "../../scss/mixins/scaling";
+@import "../../scss/mixins/text-styles";
+@import "../../scss/mixins/list-reset";
+
+.faq {
+  $block-name: &; // #{$block-name}__element
+
+  position: relative;
+  padding: vwm(25) 0 vwm(30);
+
+  @media (min-width: $screen-t) {
+    padding: vwt(25) 0 vwt(30);
+  }
+
+  @media (min-width: $screen-tl) {
+    padding: vwti(50) 0 vwti(35);
+  }
+
+  @media (min-width: $screen-d) {
+    padding: vwxl(25) 0 vwxl(35);
+  }
+
+  &__title {
+    @include small-title-main;
+
+    grid-column: 1 / span 4;
+    margin: 0;
+
+    @media (min-width: $screen-tl) {
+      grid-column: 2 / span 5;
+    }
+  }
+
+  &__pattern {
+    @media (min-width: $screen-tl) {
+      position: absolute;
+      bottom: vwti(-100);
+      left: 0;
+      display: block;
+      width: vwti(200);
+      height: vwti(300);
+      background-color: var(--back-secondary-20);
+      transition: height 0.8s ease-in-out;
+    }
+
+    @media (min-width: $screen-d) {
+      bottom: vwxl(-250);
+      width: vwxl(640);
+      height: vwxl(500);
+    }
+  }
+
+  &__circle-text {
+    position: absolute;
+
+    @media (min-width: $screen-tl) {
+      top: vwti(-78);
+      right: vwti(-78);
+    }
+
+    @media (min-width: $screen-d) {
+      top: vwxl(-78);
+      right: vwxl(-78);
+    }
+  }
+
+  &__list {
+    @include list-reset;
+
+    display: flex;
+    flex-direction: column;
+    grid-column: 1 / span 4;
+    gap: vwm(10);
+    margin-top: vwm(20);
+
+    @media (min-width: $screen-t) {
+      gap: vwt(10);
+      margin-top: vwt(20);
+    }
+
+    @media (min-width: $screen-tl) {
+      grid-column: 7 / span 5;
+      gap: vwti(20);
+      margin-top: vwti(10);
+    }
+
+    @media (min-width: $screen-d) {
+      gap: vwxl(20);
+      margin-top: vwxl(10);
+    }
+  }
+}
