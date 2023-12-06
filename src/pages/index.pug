@@ -120,3 +120,171 @@ block content
             .swiper-slide.clients__slide
               img.clients__slide-image(src= src.img + 'clients-5.jpg', srcset= src.img + 'clients-5@2x.jpg 2x', alt='')
           .clients__pagination.swiper-pagination
+  section.section.price
+    .d-none-desktop
+      .price__container.container.grid.grid--col12
+        h2.price__title
+          span Абонементы и цены
+    .price__container.container.grid.grid--col12
+      h2.price__title.d-none-mobile
+        span Абонементы и цены
+      .price__item.price-item
+        .price-item__title Пробное бесплатное занятие
+        .price-item__text
+          .price-item__text-item
+            p Длительность занятия:
+            p
+              b 60 минут
+        +button('link', 'Записаться', 'primary', '', '', '#')(class='price-item__link')
+      .price__item.price-item
+        .price-item__title 12 занятий
+        .price-item__text
+          .price-item__text-item
+            p Длительность занятия:
+            p
+              b 60 минут
+          .price-item__text-item
+            p Стоимость абонемента:
+            p
+              b 3000 ₽
+        +button('link', 'Записаться', 'primary', '', '', '#')(class='price-item__link')
+      .price__item.price-item.price-item--centered-text
+        svg.price-item__icon
+          use(href= src.icon + 'sale')
+        .price-item__title Приведи друга <br> и получи скидку <br> <b>500 ₽</b> <br> на следующий <br> месяц
+    .d-none-desktop
+      .price__container.container
+        .price__item.price-item.price-item--centered-text.price-item--mobile
+          svg.price-item__icon
+            use(href= src.icon + 'sale')
+          .price-item__title Приведи друга <br> и получи скидку <br> <b>500 ₽</b> <br> на следующий <br> месяц
+  section.section.reviews
+    .container.grid.grid--col12
+      .section__top
+        h2.reviews__title
+          span Отзывы
+        .reviews__nav.swiper-nav
+          .swiper-nav__prev
+            svg.swiper-nav__prev-icon
+              use(href= src.icon + 'arrow-right')
+          .swiper-nav__next
+            svg.swiper-nav__next-icon
+              use(href= src.icon + 'arrow-right')
+      .reviews__swiper.swiper
+        .swiper-wrapper
+          .swiper-slide.reviews-item
+            .reviews-item__image-wrapper
+              img.reviews-item__image(src= src.img + 'reviews-1.jpg', srcset= src.img + 'reviews-1@2x.jpg 2x', alt='')
+            .reviews-item__content
+              .reviews-item__text.
+                Отличный центр, потому что знаем на своем опыте, профессиональный подход к детям, индивидуальный и что
+                самое главное с любовью к своему делу!. Ребенок с радостью посещает занятия, хотя тренировки действительно
+                проходят серьезно... Результаты есть. Спасибо нашему тренеру за такой подход!
+          .swiper-slide.reviews-item
+            .reviews-item__image-wrapper
+              img.reviews-item__image(src= src.img + 'reviews-2.jpg', srcset= src.img + 'reviews-2@2x.jpg 2x', alt='')
+            .reviews-item__content
+              .reviews-item__text.
+                Моей дочке было 2 года когда впервые пришли на занятие по художественной гимнастике, ребенку
+                очень понравилось: тренера добрые, отзывчивые, требовательные, могут найти подход к каждому ребенку.
+                Нас зацепило и мы отзанимались с удовольствием целый год, будем продолжать ходить и тренироваться дальше.
+          .swiper-slide.reviews-item
+            .reviews-item__image-wrapper
+              img.reviews-item__image(src= src.img + 'reviews-1.jpg', srcset= src.img + 'reviews-1@2x.jpg 2x', alt='')
+            .reviews-item__content
+              .reviews-item__text.
+                Отличный центр, потому что знаем на своем опыте, профессиональный подход к детям, индивидуальный и что
+                самое главное с любовью к своему делу!. Ребенок с радостью посещает занятия, хотя тренировки действительно
+                проходят серьезно... Результаты есть. Спасибо нашему тренеру за такой подход!
+          .swiper-slide.reviews-item
+            .reviews-item__image-wrapper
+              img.reviews-item__image(src= src.img + 'reviews-2.jpg', srcset= src.img + 'reviews-2@2x.jpg 2x', alt='')
+            .reviews-item__content
+              .reviews-item__text.
+                Моей дочке было 2 года когда впервые пришли на занятие по художественной гимнастике, ребенку
+                очень понравилось: тренера добрые, отзывчивые, требовательные, могут найти подход к каждому ребенку.
+                Нас зацепило и мы отзанимались с удовольствием целый год, будем продолжать ходить и тренироваться дальше.
+  section.section.faq
+    .container.grid.grid--col12
+      .faq__pattern.d-none-mobile
+        +circle-text()(class='faq__circle-text')
+      .faq__title
+        span Вопрос-ответ
+      ul.faq__list
+        li.faq-item
+          .faq-item__toggle
+            span.faq-item__toggle-title Есть ли турниры?
+            .faq-item__icon-wrapper
+              svg.faq-item__icon
+                use(href= src.icon + 'plus')
+          .faq-item__content
+            .faq-item__text Ну конечно же есть, на любой вкус
+        li.faq-item
+          .faq-item__toggle.faq-item__toggle--collapsed
+            span.faq-item__toggle-title Чего достигнет ребёнок от занятий?
+            .faq-item__icon-wrapper
+              svg.faq-item__icon
+                use(href= src.icon + 'plus')
+          .faq-item__content
+            .faq-item__text.
+              Мы открываем путь в профессиональный спорт. При регулярных занятиях, желании и напоре
+              ваш ребёнок станет чемпионом!
+        li.faq-item
+          .faq-item__toggle
+            span.faq-item__toggle-title Можно ли получить разряд?
+            .faq-item__icon-wrapper
+              svg.faq-item__icon
+                use(href= src.icon + 'plus')
+          .faq-item__content
+            .faq-item__text Всегда пожалуйста
+        li.faq-item
+          .faq-item__toggle
+            span.faq-item__toggle-title А если ребёнок заболел?
+            .faq-item__icon-wrapper
+              svg.faq-item__icon
+                use(href= src.icon + 'plus')
+          .faq-item__content
+            .faq-item__text Пусть выздоравливает
+  section.section.register
+    .register__container.container.grid.grid--col12
+      .register__title Запишись <br> на первое пробное <span>бесплатное занятие</span> уже сейчас!
+      +circle-text()(class='register__circle-text d-none-desktop')
+      form.register__form.form(action='', method='post')
+        .form__title Оставьте заявку
+        .form__text Наш представитель свяжется с вами через несколько минут
+        +field('text', '', 'Имя', 'firstName')
+        +field('phone', '', 'Телефон', 'phone')
+        +field('text', '', 'Возраст девочки', 'age')
+        +button('submit', 'Оставить заявку', 'primary')(class='form__submit')
+        .form__privacy Заполняя форму вы даёте согласие на обработку <a class="form__privacy-link" href="#" target="_blank">персональных данных</a>
+  section.section.contacts
+    .contacts__container.container.grid.grid--col12
+      .contacts__left
+        .contacts__title
+          span Контакты
+        .contacts__card.contacts-card.d-none-mobile
+          .contacts-card__title Спортивный клуб художественной гимнастики «HudGim»
+          address.contacts-card__address 420000, Россия, Москва, <br> Бабушкинский район, <br> ул. Пушкина, 23
+          .contacts-card__socials
+            a.contacts-card__social.link(href='tel:+79605552222', target='_blank')
+              svg.advantages__list-item-icon
+                use(href= src.icon + 'phone')
+              span +7 960 555 22 22
+            a.contacts-card__social.link(href='#', target='_blank')
+              svg.advantages__list-item-icon
+                use(href= src.icon + 'vk')
+              span hudgim_ru
+      .contacts__map(style='position:relative;overflow:hidden;')
+        iframe.contacts__map-iframe(src='https://yandex.ru/map-widget/v1/?ll=37.608929%2C55.763925&mode=whatshere&whatshere%5Bpoint%5D=37.606744%2C55.764195&whatshere%5Bzoom%5D=17&z=17.32', width='560', height='400', frameborder='1', allowfullscreen='true', style='position:relative;')
+      .contacts__card.contacts-card.d-none-desktop
+        .contacts-card__title Спортивный клуб художественной гимнастики «HudGim»
+        address.contacts-card__address 420000, Россия, Москва, <br> Бабушкинский район, <br> ул. Пушкина, 23
+        .contacts-card__socials
+          a.contacts-card__social.link(href='tel:+79605552222', target='_blank')
+            svg.advantages__list-item-icon
+              use(href= src.icon + 'phone')
+            span +7 960 555 22 22
+          a.contacts-card__social.link(href='#', target='_blank')
+            svg.advantages__list-item-icon
+              use(href= src.icon + 'vk')
+            span hudgim_ru

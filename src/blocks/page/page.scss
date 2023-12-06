@@ -19,6 +19,7 @@
   &__main {
     flex: 1 0 auto;
     padding-top: vwm(80);
+    overflow: hidden;
 
     @media (min-width: $screen-t) {
       padding-top: vwt(80);

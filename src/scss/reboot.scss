@@ -45,18 +45,18 @@ svg {
 }
 
 .d-none-mobile {
-  display: none;
+  display: none !important;
 
   @media (min-width: $screen-tl) {
-    display: block;
+    display: block !important;
   }
 }
 
 .d-none-desktop {
-  display: block;
+  display: block !important;
 
   @media (min-width: $screen-tl) {
-    display: none;
+    display: none !important;
   }
 }
 
