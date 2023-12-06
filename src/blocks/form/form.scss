@@ -1,16 +1,118 @@
+@import "../../scss/breakpoints";
+@import "../../scss/mixins/scaling";
+@import "../../scss/mixins/text-styles";
+
 .form {
   $block-name: &; // #{$block-name}__element
 
-  display: grid;
-  gap: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: vwm(10);
 
-  &__body {
-    display: grid;
-    gap: 16px;
+  @media (min-width: $screen-t) {
+    gap: vwt(10);
   }
 
-  &__footer {
-    display: grid;
-    gap: 16px;
+  @media (min-width: $screen-tl) {
+    gap: vwti(15);
+  }
+
+  @media (min-width: $screen-d) {
+    gap: vwxl(15);
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: fluid(20, 23, 320, 768);
+    line-height: 1.25;
+
+    @media (min-width: $screen-tl) {
+      font-size: fluid(23, 25, 768, 1680);
+      line-height: 1.2;
+    }
+
+    @media (min-width: $screen-dxl) {
+      font-size: 25px;
+    }
+  }
+
+  &__text {
+    margin-top: vwm(5);
+    margin-bottom: vwm(15);
+    font-weight: 300;
+    font-size: fluid(15, 18, 320, 768);
+    line-height: 1.33;
+    letter-spacing: vwm(0.3);
+
+    @media (min-width: $screen-t) {
+      margin-top: vwt(5);
+      margin-bottom: vwt(15);
+      letter-spacing: vwt(0.3);
+    }
+
+    @media (min-width: $screen-tl) {
+      margin-top: 0;
+      margin-bottom: vwti(35);
+      font-size: fluid(18, 20, 768, 1680);
+      line-height: 1.52;
+      letter-spacing: vwti(0.4);
+    }
+
+    @media (min-width: $screen-d) {
+      margin-bottom: vwxl(35);
+    }
+
+    @media (min-width: $screen-dxl) {
+      font-size: 20px;
+    }
+  }
+
+  &__submit {
+    @media (min-width: $screen-tl) {
+      padding: vwti(25) vwti(40);
+    }
+
+    @media (min-width: $screen-d) {
+      padding: vwxl(25) vwxl(40);
+    }
+  }
+
+  &__privacy {
+    margin-top: vwm(22);
+    font-weight: 300;
+    font-size: fluid(14, 14, 320, 768);
+    line-height: 1.45;
+    letter-spacing: vwm(0.28);
+
+    @media (min-width: $screen-t) {
+      margin-top: vwt(22);
+      letter-spacing: vwt(0.28);
+    }
+
+    @media (min-width: $screen-tl) {
+      margin-top: vwti(35);
+      font-size: fluid(14, 15, 768, 1680);
+      line-height: 1.33;
+      letter-spacing: vwti(0.3);
+    }
+
+    @media (min-width: $screen-d) {
+      margin-top: vwxl(35);
+    }
+
+    @media (min-width: $screen-dxl) {
+      font-size: 15px;
+    }
+  }
+
+  &__privacy-link {
+    color: var(--front-secondary);
+    font-weight: 600;
+    text-decoration: underline;
+
+    &:hover {
+      color: var(--front-secondary);
+      text-decoration: none;
+    }
   }
 }

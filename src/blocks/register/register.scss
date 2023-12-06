@@ -1,0 +1,92 @@
+@import "../../scss/breakpoints";
+@import "../../scss/mixins/scaling";
+@import "../../scss/mixins/text-styles";
+
+.register {
+  $block-name: &; // #{$block-name}__element
+
+  position: relative;
+  padding: vwm(95) 0 vwm(55);
+
+  @media (min-width: $screen-t) {
+    padding: vwt(95) 0 vwt(55);
+  }
+
+  @media (min-width: $screen-tl) {
+    padding: vwti(15) 0 vwti(65);
+  }
+
+  @media (min-width: $screen-d) {
+    padding: vwxl(15) 0 vwxl(65);
+  }
+
+  &__container {
+    position: relative;
+    z-index: 2;
+  }
+
+  &__circle-text {
+    position: absolute;
+    top: vwm(111);
+    right: vwm(25);
+
+    @media (min-width: $screen-t) {
+      top: vwt(40);
+      right: vwt(25);
+    }
+
+    @media (min-width: $screen-tl) {
+      top: vwti(111);
+      right: vwti(25);
+    }
+
+    @media (min-width: $screen-d) {
+      top: vwxl(111);
+      right: vwxl(25);
+    }
+  }
+
+  &__title {
+    @include extra-small-title;
+
+    grid-column: 1 / span 3;
+    margin: 0;
+
+    @media (min-width: $screen-t) {
+      grid-column: 1 / span 4;
+    }
+
+    @media (min-width: $screen-tl) {
+      grid-column: 2 / span 5;
+    }
+
+    @media (min-width: $screen-d) {
+      grid-column: 2 / span 3;
+    }
+
+    br {
+      @media (min-width: $screen-tl) {
+        display: none;
+      }
+    }
+  }
+
+  &__form {
+    grid-column: 1 / span 4;
+    margin-top: vwm(66);
+
+    @media (min-width: $screen-t) {
+      margin-top: vwt(66);
+    }
+
+    @media (min-width: $screen-tl) {
+      grid-column: 7 / span 5;
+      margin-top: vwti(200);
+    }
+
+    @media (min-width: $screen-d) {
+      grid-column: 6 / span 3;
+      margin-top: vwxl(200);
+    }
+  }
+}
