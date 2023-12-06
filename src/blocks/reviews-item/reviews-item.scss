@@ -1,0 +1,135 @@
+@import "../../scss/breakpoints";
+@import "../../scss/mixins/scaling";
+@import "../../scss/mixins/text-styles";
+
+.reviews-item {
+  $block-name: &; // #{$block-name}__element
+
+  &__image-wrapper {
+    position: absolute;
+    top: vwm(-40);
+    left: vwm(20);
+    min-width: vwm(243);
+    max-width: vwm(243);
+    height: vwm(243);
+    padding-top: 41.12%;
+    overflow: hidden;
+    border-radius: vwm(5);
+
+    @media (min-width: $screen-t) {
+      top: vwt(-40);
+      left: vwt(20);
+      min-width: vwt(243);
+      max-width: vwt(243);
+      height: vwt(243);
+      border-radius: vwt(5);
+    }
+
+    @media (min-width: $screen-tl) {
+      top: vwti(20);
+      left: unset;
+      min-width: 38.412%;
+      max-width: 38.412%;
+      height: 0;
+      padding-top: 38.412%;
+      border-radius: vwti(5);
+    }
+
+    @media (min-width: $screen-d) {
+      top: vwxl(20);
+      border-radius: vwxl(5);
+    }
+  }
+
+  &__image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__content {
+    width: 100%;
+    margin-left: auto;
+    padding: vwm(202) vwm(15) vwm(53);
+    background-color: var(--back-primary);
+    box-shadow:
+      0 1.852px 3.148px 0 rgb(0 0 0 / 5%),
+      0 8.148px 6.519px 0 rgb(0 0 0 / 4%),
+      0 20px 13px 0 rgb(241 1 50 / 3%),
+      0 38.519px 25.481px 0 rgb(241 1 50 / 3%),
+      0 64.815px 46.852px 0 rgb(241 1 50 / 2%),
+      0 100px 80px 0 rgb(0 0 0 / 1%);
+
+    @media (min-width: $screen-t) {
+      padding: vwt(202) vwt(15) vwt(53);
+    }
+
+    @media (min-width: $screen-tl) {
+      width: calc(100% - 50px);
+      padding: vwti(20) vwti(20) vwti(84);
+    }
+
+    @media (min-width: $screen-d) {
+      padding: vwxl(20) vwxl(60) vwxl(84) vwxl(280);
+    }
+  }
+
+  &__text {
+    position: relative;
+    padding-top: vwm(33);
+    padding-left: vwm(74);
+    font-weight: 300;
+    font-size: fluid(14, 15, 320, 768);
+    line-height: 1.33;
+    letter-spacing: 0.28px;
+
+    @media (min-width: $screen-t) {
+      padding-top: vwt(33);
+      padding-left: vwt(74);
+    }
+
+    @media (min-width: $screen-tl) {
+      padding-top: vwti(170);
+      padding-left: 0;
+      font-size: fluid(15, 15, 768, 1680);
+      letter-spacing: 0.3px;
+    }
+
+    @media (min-width: $screen-d) {
+      padding-top: vwxl(108);
+    }
+
+    @media (min-width: $screen-dxl) {
+      font-size: 15px;
+    }
+
+    &::before {
+      position: absolute;
+      top: vwm(32);
+      left: 0;
+      display: block;
+      width: 50px;
+      height: 33px;
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='50' height='33' viewBox='0 0 50 33' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M14.9367 0.496881C11.8424 -0.328251 8.74819 -0.121969 6.06652 1.52829C3.38484 2.97227 1.32201 5.44767 0.496881 8.33563C-1.35967 14.5241 2.14714 20.9189 8.33563 22.7754C11.6362 23.3943 13.4927 24.4257 13.699 25.2508C13.9053 26.076 13.2864 27.5199 9.57333 30.2016C8.95448 30.6142 8.33563 31.0267 7.71678 31.233C7.30422 31.4393 7.30422 31.8519 7.5105 32.2644C7.5105 32.4707 7.92306 32.677 8.12935 32.677C8.12935 32.677 8.33563 32.677 8.33563 32.4707C8.95448 32.2644 9.57333 31.8519 10.1922 31.4393H10.3985V31.233C16.3807 27.5199 20.7126 21.744 22.7754 14.9367C23.6006 11.8424 23.188 8.7482 21.744 6.06652C20.3 3.38484 17.8246 1.32201 14.9367 0.496881ZM41.7535 0.496881C35.565 -1.35966 29.1702 2.14714 27.3137 8.33563C25.4571 14.5241 28.9639 20.9189 35.1524 22.7754C38.4529 23.3943 40.3095 24.4257 40.5158 25.2508C40.722 26.076 40.1032 27.5199 36.3901 30.2016C35.7713 30.6142 35.1524 31.0267 34.5336 31.233C34.121 31.4393 34.121 31.8519 34.3273 32.2644C34.3273 32.4707 34.7398 32.677 34.9461 32.677C34.9461 32.677 35.1524 32.677 35.1524 32.4707C35.9775 32.2644 36.3901 31.8519 37.0089 31.4393H37.2152V31.233C43.1974 27.5199 47.5294 21.744 49.5922 14.9367C51.2425 8.74819 47.7357 2.35343 41.7535 0.496881Z' fill='%23F10132' fill-opacity='0.25'/%3e%3c/svg%3e ");
+      content: "";
+
+      @media (min-width: $screen-t) {
+        top: vwt(32);
+      }
+
+      @media (min-width: $screen-tl) {
+        top: vwti(32);
+        right: 0;
+        left: unset;
+      }
+
+      @media (min-width: $screen-d) {
+        top: vwxl(32);
+        right: unset;
+        left: 0;
+      }
+    }
+  }
+}
