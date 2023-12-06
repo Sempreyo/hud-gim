@@ -29,7 +29,7 @@
       }
 
       @media (min-width: $screen-tl) {
-        height: vwti(1000) !important;
+        height: vwti(600) !important;
       }
 
       @media (min-width: $screen-d) {
@@ -65,26 +65,9 @@
   }
 
   &__title {
-    @include small-title;
+    @include small-title-main;
 
     margin: 0;
-    font-size: vwm(50);
-    letter-spacing: vwm(0.5);
-
-    @media (min-width: $screen-t) {
-      font-size: vwt(50);
-      letter-spacing: vwt(0.5);
-    }
-
-    @media (min-width: $screen-tl) {
-      font-size: vwti(100);
-      letter-spacing: vwti(1);
-    }
-
-    @media (min-width: $screen-d) {
-      font-size: vwxl(100);
-      letter-spacing: vwxl(1);
-    }
   }
 
   &__nav {
