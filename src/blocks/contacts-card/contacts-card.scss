@@ -1,0 +1,121 @@
+@import "../../scss/breakpoints";
+@import "../../scss/mixins/scaling";
+@import "../../scss/mixins/text-styles";
+
+.contacts-card {
+  $block-name: &; // #{$block-name}__element
+
+  padding: vwm(20) vwm(20) vwm(35);
+  background-color: var(--back-primary);
+  border-radius: 5px;
+  box-shadow:
+    0 1.852px 3.148px 0 rgb(0 0 0 / 5%),
+    0 8.148px 6.519px 0 rgb(0 0 0 / 4%),
+    0 20px 13px 0 rgb(241 1 50 / 3%),
+    0 38.519px 25.481px 0 rgb(241 1 50 / 3%),
+    0 64.815px 46.852px 0 rgb(241 1 50 / 2%),
+    0 100px 80px 0 rgb(0 0 0 / 1%);
+
+  @media (min-width: $screen-t) {
+    padding: vwt(20) vwt(20) vwt(35);
+  }
+
+  @media (min-width: $screen-tl) {
+    padding: vwti(40) vwti(40) vwti(95);
+  }
+
+  @media (min-width: $screen-d) {
+    padding: vwxl(40) vwxl(40) vwxl(95);
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: fluid(15, 20, 320, 768);
+    line-height: 1.2;
+
+    @media (min-width: $screen-tl) {
+      font-size: fluid(20, 25, 768, 1680);
+    }
+
+    @media (min-width: $screen-dxl) {
+      font-size: 25px;
+    }
+  }
+
+  &__address {
+    margin-top: vwm(15);
+    font-weight: 300;
+    font-size: fluid(15, 18, 320, 768);
+    font-style: normal;
+    line-height: 1.23;
+    letter-spacing: vwm(0.3);
+
+    @media (min-width: $screen-t) {
+      margin-top: vwt(15);
+    }
+
+    @media (min-width: $screen-tl) {
+      margin-top: vwti(30);
+      font-size: fluid(18, 20, 768, 1680);
+      letter-spacing: vwti(0.4);
+    }
+
+    @media (min-width: $screen-d) {
+      margin-top: vwxl(30);
+    }
+
+    @media (min-width: $screen-dxl) {
+      font-size: 20px;
+      letter-spacing: vwxl(0.4);
+    }
+  }
+
+  &__socials {
+    display: flex;
+    flex-direction: column;
+    gap: vwm(15);
+    margin-top: vwm(25);
+
+    @media (min-width: $screen-t) {
+      gap: vwt(15);
+      margin-top: vwt(25);
+    }
+
+    @media (min-width: $screen-tl) {
+      gap: vwti(15);
+      margin-top: vwti(45);
+    }
+
+    @media (min-width: $screen-d) {
+      gap: vwxl(15);
+      margin-top: vwxl(45);
+    }
+  }
+
+  &__social {
+    display: flex;
+    gap: vwm(15);
+    align-items: center;
+    font-size: fluid(15, 18, 320, 768);
+    line-height: 1;
+    letter-spacing: vwm(0.3);
+
+    @media (min-width: $screen-t) {
+      gap: vwt(15);
+    }
+
+    @media (min-width: $screen-tl) {
+      gap: vwti(15);
+      font-size: fluid(18, 20, 768, 1680);
+      letter-spacing: vwti(0.4);
+    }
+
+    @media (min-width: $screen-d) {
+      gap: vwxl(15);
+    }
+
+    @media (min-width: $screen-dxl) {
+      font-size: 20px;
+    }
+  }
+}
