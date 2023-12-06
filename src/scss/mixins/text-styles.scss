@@ -70,6 +70,49 @@
   }
 }
 
+@mixin small-title-main {
+  font-weight: 400;
+  font-size: fluid(50, 70, 320, 768);
+  font-family: var(--font-dance);
+  line-height: 1;
+  letter-spacing: vwm(0.5);
+
+  @media (min-width: $screen-tl) {
+    font-size: fluid(70, 100, 768, 1680);
+  }
+
+  @media (min-width: $screen-dxl) {
+    font-size: 100px;
+    letter-spacing: vwxl(1);
+  }
+
+  span {
+    color: var(--front-secondary);
+  }
+}
+
+@mixin extra-small-title {
+  font-weight: 400;
+  font-size: fluid(45, 55, 320, 768);
+  font-family: var(--font-dance);
+  line-height: 1;
+  letter-spacing: vwm(0.45);
+
+  @media (min-width: $screen-tl) {
+    font-size: fluid(55, 75, 768, 1680);
+    letter-spacing: vwti(0.75);
+  }
+
+  @media (min-width: $screen-dxl) {
+    font-size: 75px;
+    letter-spacing: vwxl(0.75);
+  }
+
+  span {
+    color: var(--front-secondary);
+  }
+}
+
 @mixin subtitle {
   color: var(--front-primary-50);
   font-weight: 600;

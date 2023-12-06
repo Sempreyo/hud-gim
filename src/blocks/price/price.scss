@@ -1,0 +1,66 @@
+@import "../../scss/breakpoints";
+@import "../../scss/mixins/scaling";
+@import "../../scss/mixins/text-styles";
+
+.price {
+  $block-name: &; // #{$block-name}__element
+
+  padding: vwm(15) 0 vwm(55);
+
+  @media (min-width: $screen-t) {
+    padding: vwt(15) 0 vwt(55);
+  }
+
+  @media (min-width: $screen-tl) {
+    padding: vwti(50) 0 vwti(60);
+  }
+
+  @media (min-width: $screen-d) {
+    padding: vwxl(105) 0 vwxl(95);
+  }
+
+  &__container {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    overflow-x: auto;
+
+    @media (min-width: $screen-d) {
+      display: grid;
+      flex-wrap: unset;
+      align-items: stretch;
+      overflow-x: unset;
+    }
+  }
+
+  &__title {
+    @include small-title-main;
+
+    grid-column: 1 / span 4;
+    height: 100%;
+    margin: 0 0 vwm(26);
+
+    @media (min-width: $screen-tl) {
+      grid-column: 2 / span 4;
+      margin: 0;
+    }
+  }
+
+  &__item {
+    grid-column: span 3;
+    min-width: vwm(243);
+
+    @media (min-width: $screen-t) {
+      min-width: vwt(243);
+    }
+
+    @media (min-width: $screen-tl) {
+      grid-column: span 2;
+      min-width: vwti(243);
+    }
+
+    @media (min-width: $screen-d) {
+      min-width: vwxl(243);
+    }
+  }
+}
